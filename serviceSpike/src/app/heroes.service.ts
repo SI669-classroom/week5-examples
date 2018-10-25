@@ -23,7 +23,7 @@ export class HeroesService {
     this.storage.get(this.DATA_KEY).then(data => {
       this.heroBundle = data;
       console.log("Retrieved heroBundle: " + this.heroBundle);
-      if(this.heroBundle === undefined) {
+      if(this.heroBundle === null) {
         this.loadDefaultHeroes();
       } else {
         this.heroManager.initFromBundle(this.heroBundle);
